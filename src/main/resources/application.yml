@@ -1,0 +1,10 @@
+exam:
+  questions:
+    file:
+      name: questions.csv
+  pass-rate: 4
+
+
+spring:
+  messages:
+    basename: i18n/messages
