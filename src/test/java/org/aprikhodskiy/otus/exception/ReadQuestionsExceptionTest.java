@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @DisplayName("Класс ReadQuestionsException")
-public class ReadQuestionsExceptionTest {
+class ReadQuestionsExceptionTest {
 
     @DisplayName("корректно создается исключение")
     @Test

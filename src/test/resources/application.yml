@@ -1,0 +1,11 @@
+spring:
+  shell:
+    interactive:
+      enabled: false
+
+
+exam:
+  questions:
+    file:
+      name: questions.csv
+  pass-rate: 4
