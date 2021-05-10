@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("Класс Question")
-public class QuestionTest {
+class QuestionTest {
     @DisplayName("корректно создается конструктором")
     @Test
     void shouldHaveCorrectConstructor() {

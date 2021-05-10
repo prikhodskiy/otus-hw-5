@@ -21,7 +21,7 @@ public class CsvReader {
     public List<CsvQuestionItem> readFile() {
         try {
             CsvSchema bootstrapSchema = CsvSchema.emptySchema().withHeader();
-            CsvMapper mapper = new CsvMapper();
+            var mapper = new CsvMapper();
             ObjectReader reader = mapper.readerFor(CsvQuestionItem.class).with(bootstrapSchema);
             MappingIterator<CsvQuestionItem> readValues = reader.readValues(resourceFile.getInputStream());
             return readValues.readAll();

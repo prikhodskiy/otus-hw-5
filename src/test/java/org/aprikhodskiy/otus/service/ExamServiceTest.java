@@ -22,7 +22,7 @@ import static org.mockito.BDDMockito.given;
 
 @DisplayName("Класс Question")
 @ExtendWith(MockitoExtension.class)
-public class ExamServiceTest {
+class ExamServiceTest {
 
     @Mock
     private QuestionDao questionDao;
@@ -81,11 +81,11 @@ public class ExamServiceTest {
     @Test
     void examResultTest() throws IOException {
         given(questionDao.findAll()).willReturn(simpleQuestions());
-        given(userInput.getName()).willReturn("student");
+//        given(userInput.getName()).willReturn("student");
         given(userInput.getAnswer()).willReturn("yes");
         given(messageSource.getMessage(anyString(),  any(), any())).willReturn("message");
 
-        examService.runExam();
+        examService.runExam("student");
 
         assertEquals(2, examService.correctAnswersCounter);
     }

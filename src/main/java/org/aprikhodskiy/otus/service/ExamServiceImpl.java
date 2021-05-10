@@ -43,8 +43,8 @@ public class ExamServiceImpl implements ExamService {
     }
 
     @Override
-    public void runExam() {
-        askForName();
+    public void runExam(String studentName) {
+        this.student = new Student(studentName);
         for (Question q :
                 dao.findAll()) {
             if (checkAnswer(q))
@@ -62,15 +62,6 @@ public class ExamServiceImpl implements ExamService {
         return messageSource.getMessage(key, text, Locale.getDefault());
     }
 
-    private void askForName() {
-        System.out.println(getLocalizedMessage("enter.name"));
-        try {
-            this.student = new Student(userInput.getName());
-        } catch (IOException e) {
-            System.out.println("Sorry. Something went wrong: " + e.getMessage());
-        }
-    }
-
     private boolean checkAnswer(Question question) {
         System.out.println();
         System.out.println("+++++++++++++++" + getLocalizedMessage("question") + " №: " + question.getOrder() + " ++++++++++++++++");
@@ -84,6 +75,7 @@ public class ExamServiceImpl implements ExamService {
             return false;
         }
     }
+
 
     private void printResults() {
         System.out.println();

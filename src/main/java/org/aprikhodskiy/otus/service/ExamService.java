@@ -7,5 +7,5 @@ import java.util.List;
 public interface ExamService {
     List<Question> getAllQuestions();
 
-    void runExam();
+    void runExam(String studentName);
 }
